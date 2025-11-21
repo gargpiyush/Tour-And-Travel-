@@ -1,0 +1,19 @@
+/* ----------------------------------------------------------------- */
+/* css/style.css                                                       */
+/* ----------------------------------------------------------------- */
+
+/* Basic resets and custom utilities */
+:root{--accent:#0ea5a4;--muted:#64748b}
+body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+
+/* Card hover effect */
+.hover-card{transition:transform .18s ease, box-shadow .18s ease}
+.hover-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.08)}
+
+/* Small responsive tweaks */
+@media (max-width: 767px){
+  .hero img{height:240px}
+}
+
+/* Footer */
+footer{background:linear-gradient(180deg, #fff, #f8fafc)}

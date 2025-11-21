@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body style="background-image: url('images/weather1.jpg'); background-size: cover; background-repeat: no-repeat;">
+  <div class="weather-app">
+    <header>
+      <h1>Plan Ahead with Weather Insights</h1>
+    </header>
+    <main>
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="weather-info">
+        <h2 id="cityName">City Name</h2>
+        <p id="temperature">Temperature: --°C</p>
+        <p id="precipitation">Precipitation: --%</p>
+        <p id="wind">Wind: -- km/h</p>
+        <p id="airQuality">Air Quality: --</p>
+        <p id="uvIndex">UV Index: --</p>
+        <p id="sunset">Sunset: --</p>
+        <p id="sunrise">Sunrise: --</p>
+        <p id="description">Description: --</p>
+      </div>
+    </main>
+    <footer>
+      <p>© 2024 Weather Tour and Travel</p>
+    </footer>
+  </div>
+  <script>
+    // Add your OpenWeatherMap API key here
+    const API_KEY = 'e655d242adcabe4f1f444b6cdb22f753';
+
+    // DOM elements
+    const cityInput = document.getElementById('cityInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const cityName = document.getElementById('cityName');
+    const temperature = document.getElementById('temperature');
+    const precipitation = document.getElementById('precipitation');
+    const wind = document.getElementById('wind');
+    const airQuality = document.getElementById('airQuality');
+    const uvIndex = document.getElementById('uvIndex');
+    const sunset = document.getElementById('sunset');
+    const sunrise = document.getElementById('sunrise');
+    const description = document.getElementById('description');
+
+    // Fetch weather data
+    async function getWeather(city) {
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error('City not found');
+        }
+        const data = await response.json();
+        updateUI(data);
+        getExtraWeatherData(data.coord.lat, data.coord.lon);
+      } catch (error) {
+        alert(error.message);
+      }
+    }
+
+    // Fetch extra weather data
+    async function getExtraWeatherData(lat, lon) {
+      const extraApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
+      try {
+        const response = await fetch(extraApiUrl);
+        if (!response.ok) {
+          throw new Error('Additional weather data not available');
+        }
+        const data = await response.json();
+        updateExtraUI(data);
+      } catch (error) {
+        alert(error.message);
+      }
+    }
+
+    // Update the main weather data UI
+    function updateUI(data) {
+      cityName.textContent = data.name;
+      temperature.textContent = `Temperature: ${data.main.temp}°C`;
+      description.textContent = `Description: ${data.weather[0].description}`;
+      wind.textContent = `Wind: ${data.wind.speed} km/h`;
+      precipitation.textContent = `Precipitation: ${data.clouds.all}%`;
+      sunset.textContent = `Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}`;
+      sunrise.textContent = `Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}`;
+    }
+
+    // Update extra weather data UI
+    function updateExtraUI(data) {
+      uvIndex.textContent = `UV Index: ${data.current.uvi}`;
+      airQuality.textContent = `Air Quality: ${data.current.air_quality || '--'}`; // Placeholder
+    }
+
+    // Event listener for the search button
+    searchBtn.addEventListener('click', () => {
+      const city = cityInput.value.trim();
+      if (city) {
+        getWeather(city);
+      } else {
+        alert('Please enter a city name');
+      }
+    });
+  </script>
+</body>
+</html>

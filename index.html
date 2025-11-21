@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WanderWave Travel — College Project</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="tailwind.css"> 
+
+<style>
+
+.hero {
+background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+background-size: cover;
+background-position: center;
+}
+.card-img-top { height: 180px; object-fit: cover; }
+.team-photo { width: 120px; height: 120px; object-fit: cover; border-radius: 9999px; }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<div class="container">
+<a class="navbar-brand d-flex align-items-center" href="#">
+<svg class="me-2" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15 8H9L12 2Z" fill="#0ea5e9"/><path d="M12 22L9 16H15L12 22Z" fill="#06b6d4"/></svg>
+<strong>WanderWave</strong>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+ <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+<li class="nav-item"><a class="btn btn-primary ms-2" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<header id="home" class="hero text-white py-20">
+<div class="container text-center">
+ <h1 class="display-5 fw-bold">Explore. Experience. Remember.</h1>
+ <p class="lead mb-4">Affordable college-friendly trips, safety-first itineraries and unforgettable memories.</p>
+ <div class="d-flex justify-content-center gap-2">
+ <a href="#packages" class="btn btn-lg btn-light">View Packages</a>
+ <a href="#contact" class="btn btn-lg btn-outline-light">Get in Touch</a>
+ </div>
+ </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="py-8">
+<div class="container">
+ <div class="row align-items-center">
+ <div class="col-md-6">
+ <h2>About WanderWave</h2>
+ <p>WanderWave is a student-built tour & travel website. This template demonstrates using HTML, Bootstrap and Tailwind together — clean layout, responsive components and easily-customizable blocks.</p>
+ <ul>
+ <li>Student-focused budgets</li>
+ <li>Experienced guides & safety protocols</li>
+ <li>Flexible dates and group discounts</li>
+ </ul>
+ </div>
+ <div class="col-md-6">
+ <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="travel" class="img-fluid rounded shadow-sm">
+</div>
+ </div>
+ </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="py-8 bg-white">
+<div class="container">
+<div class="d-flex justify-content-between align-items-center mb-4">
+ <h2>Popular Packages</h2>
+ <small class="text-muted">3-day sample itineraries · All inclusive</small>
+ </div>
+
+ <div class="row g-4">
+ <div class="col-md-4">
+<div class="card h-100">
+ <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="beach">
+ <div class="card-body d-flex flex-column">
+ <h5 class="card-title">Beach Retreat — Goa</h5>
+ <p class="card-text">Relax on beaches, try water sports, enjoy local cuisine and nightlife. Ideal for first-time college trips.</p>
+
+<div class="mt-auto d-flex justify-content-between align-items-center">
+ <span class="fw-bold">₹6,499</span>
+ <a class="btn btn-sm btn-primary" href="#contact">Book Now</a>
+ </div>
+</div>
+ </div>
+ </div>
+
+ <div class="col-md-4">
+ <div class="card h-100">
+ <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="hill">
+ <div class="card-body d-flex flex-column">
+ <h5 class="card-title">Hills & Treks — Manali</h5>
+ <p class="card-text">Guided treks, bonfires and comfortable stays. Great for adventurous groups and nature lovers.</p>
+ <div class="mt-auto d-flex justify-content-between align-items-center">
+ <span class="fw-bold">₹7,999</span>
+ <a class="btn btn-sm btn-primary" href="#contact">Book Now</a>
+ </div>
+ </div>
+ </div>
+ </div>
+
+<div class="col-md-4">
+<div class="card h-100">
+ <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="city">
+<div class="card-body d-flex flex-column">
+ <h5 class="card-title">Cultural Tour — Jaipur</h5>
+ <p class="card-text">Heritage walks, local bazaars and palace visits with a knowledgeable guide.</p>
+ <div class="mt-auto d-flex justify-content-between align-items-center">
+ <span class="fw-bold">₹5,199</span>
+ <a class="btn btn-sm btn-primary" href="#contact">Book Now</a>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ </div>
+ </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-8">
+<div class="container">
+ <h2 class="mb-4">Gallery</h2>
+ <div class="row g-2">
+ <div class="col-6 col-md-3"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded" alt="g1"></div>
+ <div class="col-6 col-md-3"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded" alt="g2"></div>
+ <div class="col-6 col-md-3"><img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded" alt="g3"></div>
+ <div class="col-6 col-md-3"><img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded" alt="g4"></div>
+</div>
+ </div>
+</section>
+
+
+
+<!-- CONTACT -->
+<section id="contact" class="py-8">
+<div class="container">
+ <h2 class="mb-4">Contact Us</h2>
+ <div class="row">
+ <div class="col-md-6">
+ <form>
+ <div class="mb-3">
+ <label class="form-label">Name</label>
+ <input class="form-control" type="text" placeholder="Your name">
+ </div>
+ <div class="mb-3">
+ <label class="form-label">Email</label>
+ <input class="form-control" type="email" placeholder="you@example.com">
+ </div>
+ <div class="mb-3">
+ <label class="form-label">Message</label>
+ <textarea class="form-control" rows="4" placeholder="Tell us about your trip"></textarea>
+ </div>
+ <button class="btn btn-primary">Send Message</button>
+ </form>
+ </div>
+ <div class="col-md-6">
+ <div class="p-4 bg-light rounded shadow-sm">
+ <h5>Contact Info</h5>
+ <p class="mb-1">Email: gargpiyush525@gmail.com</p>
+ <p class="mb-1">Phone: +91 81781 63055</p>
+ <p class="mb-0">Address: Murad Nagar Uttar Pradesh</p>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4 bg-dark text-white">
+ <div class="container d-flex justify-content-between align-items-center">
+ <small>© 2025 WanderWave · Built by: Piyush Garg, Milan Khari, Mayank Kumar, Prashant Sharma</small>
+ <div>
+ <a href="#" class="text-white me-3">Privacy</a>
+ <a href="#" class="text-white">Terms</a>
+ </div>
+ </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
